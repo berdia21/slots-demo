@@ -17,9 +17,7 @@ export class SliderService {
   constructor(private http: HttpClient) {}
 
   get getSlides$(): Observable<Slide[] | null> {
-    // ${API_URL}
-
-    return this.http.get<Slide[]>(`/slides`).pipe(
+    return this.http.get<Slide[]>(`${API_URL}/slides`).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error('HTTP error:', error);
         return of<Slide[] | null>(DUMMY_SLIDES as Slide[]);

@@ -18,8 +18,7 @@ export class ProviderService {
   constructor(private http: HttpClient) {}
 
   get getProviders$(): Observable<Provider[] | null> {
-    // ${API_URL}
-    return this.http.get<Provider[] | null>(`/providers`).pipe(
+    return this.http.get<Provider[] | null>(`${API_URL}/providers`).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error('HTTP error:', error);
         return of<Provider[] | null>(DUMMY_PROVIDERS as Provider[]);

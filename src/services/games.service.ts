@@ -37,13 +37,14 @@ export class GamesService {
   }
 
   getGamesByProvider(providerId: string): Observable<Game[] | null> {
-    // ${API_URL}
-    return this.http.get<Game[] | null>(`/game/group/${providerId}`).pipe(
-      catchError((error: HttpErrorResponse) => {
-        console.error('HTTP error:', error);
-        return of<Game[] | null>(DUMMY_GAMES as Game[]);
-      }),
-      map((games: Game[] | null) => this.shuffleArray(games as Game[]))
-    );
+    return this.http
+      .get<Game[] | null>(`${API_URL}/game/group/${providerId}`)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.error('HTTP error:', error);
+          return of<Game[] | null>(DUMMY_GAMES as Game[]);
+        }),
+        map((games: Game[] | null) => this.shuffleArray(games as Game[]))
+      );
   }
 }
