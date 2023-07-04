@@ -1,0 +1,37 @@
+<div class="games">
+  <div class="header" *ngIf="activeProvider">
+    {{ activeProvider.itemLabel }}
+  </div>
+  <div class="games-wrapper">
+    <!-- fake hot game with index 4, for demonstarion -->
+    <div
+      *ngFor="let game of games; let i = index"
+      class="game-item"
+      [class.hot]="i === 4"
+    >
+      <img
+        *ngIf="game.thumbnail"
+        [src]="i === 4 ? game.imageUrl : game.thumbnail"
+        alt="game"
+        class="game-img"
+      />
+      <div class="badge">HOT</div>
+      <div class="game-info">
+        <div>{{ game.name }}</div>
+        <img
+          [src]="game.providerIcon"
+          *ngIf="game.providerIcon"
+          alt="provider icon"
+        />
+      </div>
+      <ng-icon name="matPlayArrow"></ng-icon>
+    </div>
+  </div>
+
+  <div
+    *ngIf="games && games.length < 1 && searchKeyword"
+    class="text-xl text-center my-5"
+  >
+    Game with name "{{ searchKeyword }}" was not found 😞
+  </div>
+</div>

@@ -1,0 +1,43 @@
+@import '../../../../../scss/abstracts/variables';
+@import '../../../../../scss/abstracts/mixins';
+
+form {
+  display: flex;
+  align-items: center;
+
+  input {
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: $color-blue-950;
+    padding: 5px 15px;
+    font-size: 11px;
+    color: #fff;
+    border: none;
+
+    &:focus,
+    &:focus-within {
+      outline: none;
+    }
+
+    @include upto-sm {
+      width: calc(100% - 35px);
+    }
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $color-red-300;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -5px;
+    z-index: 2;
+
+    ng-icon {
+      font-size: 26px;
+    }
+  }
+}

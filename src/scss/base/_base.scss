@@ -1,0 +1,25 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  background-color: $color-blue-950;
+  color: #fff;
+
+  @include upto-lg {
+    overflow-x: hidden;
+  }
+}
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1230px;
+}
+
+// disable tap effects on mobile
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}

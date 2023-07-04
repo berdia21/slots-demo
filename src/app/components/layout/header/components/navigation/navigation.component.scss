@@ -1,0 +1,84 @@
+@import '../../../../../../scss/abstracts/variables';
+@import '../../../../../../scss/abstracts/mixins';
+
+
+nav {
+  height: 100%;
+  font-weight: 700;
+
+  ul {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include upto-lg {
+      height: auto;
+    }
+
+    li {
+      margin: 0 18px;
+
+      @include upto-xxxl {
+        margin: 0 8px;
+      }
+
+      @include upto-xxl {
+        margin: 0 5px;
+      }
+
+      @include upto-xl {
+        max-width: 23%;
+      }
+
+      @include upto-lg {
+        flex-grow: 1;
+        max-width: none;
+        margin: 0 18px 10px;
+        align-items: flex-start;
+        display: flex;
+      }
+
+      a {
+        transition: $transition-primary;
+        padding: 0 5px;
+        color: $color-gray-350;
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+        border-bottom: 2px solid transparent;
+        text-align: center;
+
+        @include upto-xxxl {
+          font-size: 14px;
+        }
+
+        @include upto-xxl {
+          font-size: 13px;
+        }
+
+        @include upto-lg {
+          padding: 0 0 7px;
+          font-size: 14px;
+          width: 100%;
+          text-align: left;
+        }
+
+        &:hover {
+          @include lg-up {
+            color: #fff;
+            border-color: $color-red-300;
+          }
+        }
+
+        &.router-link-active {
+          color: #fff;
+          border-color: $color-red-300;
+        }
+      }
+    }
+
+    @include upto-lg {
+      flex-direction: column;
+    }
+  }
+}

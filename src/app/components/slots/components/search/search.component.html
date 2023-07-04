@@ -1,0 +1,13 @@
+<div class="search">
+  <form (ngSubmit)="emitSearchKeyword()">
+    <input
+      type="text"
+      [(ngModel)]="searchKeyword"
+      [placeholder]="'typeGameName' | translate"
+      [ngModelOptions]="{ standalone: true }"
+    />
+    <button type="submit" title="Submit">
+      <ng-icon name="matSearch"></ng-icon>
+    </button>
+  </form>
+</div>

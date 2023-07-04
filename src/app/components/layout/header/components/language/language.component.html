@@ -1,0 +1,14 @@
+<div class="languages">
+  <span *ngIf="translate.store.currentLang">
+    {{ translate.store.currentLang }}
+  </span>
+
+  <ng-container *ngFor="let language of translate.getLangs()">
+    <span
+      *ngIf="language !== translate.store.currentLang"
+      (click)="switchLang(language)"
+    >
+      {{ language }}
+    </span>
+  </ng-container>
+</div>

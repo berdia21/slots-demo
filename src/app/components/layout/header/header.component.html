@@ -1,0 +1,21 @@
+<header>
+  <div class="hamburger" *ngIf="!desktopMode" (click)="toggleNav()">
+    <ng-icon name="matMenu"></ng-icon>
+  </div>
+
+  <div class="logo-holder">
+    <a [routerLink]="['/']">
+      <img src="assets/images/main-logo.svg" alt="main logo" />
+    </a>
+    <app-language *ngIf="desktopMode"></app-language>
+  </div>
+  <div class="dynamic-wrapper" [class.open]="navIsOpen">
+    <div class="close-menu" (click)="toggleNav()">
+      <ng-icon name="matClose"></ng-icon>
+    </div>
+    <app-language *ngIf="!desktopMode"></app-language>
+    <app-navigation></app-navigation>
+    <app-user-info></app-user-info>
+  </div>
+</header>
+<div class="overlay" [class.show]="navIsOpen" (click)="toggleNav()"></div>

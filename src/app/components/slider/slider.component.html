@@ -1,0 +1,25 @@
+<section class="swiper-slider">
+  <swiper-container
+    [pagination]="{
+      el: '.custom-pagination',
+      clickable: true
+    }"
+    [navigation]="{
+      nextEl: '.next-slide',
+      prevEl: '.prev-slide',
+    }"
+    [autoplay]="{
+      delay: 5000
+    }"
+  >
+    <swiper-slide
+      *ngFor="let slide of slides$ | async; let i = index"
+      lazy="true"
+    >
+      <img [src]="slide.imageUrl" alt="slide image" loading="lazy" />
+    </swiper-slide>
+  </swiper-container>
+  <div class="custom-pagination"></div>
+  <div class="next-slide"><ng-icon name="matChevronRight"></ng-icon></div>
+  <div class="prev-slide"><ng-icon name="matChevronLeft"></ng-icon></div>
+</section>

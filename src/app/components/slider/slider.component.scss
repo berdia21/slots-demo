@@ -1,0 +1,125 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.custom-pagination-bullet {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  background-color: red;
+  display: inline-block;
+}
+
+.swiper-slider {
+  margin-bottom: 50px;
+  position: relative;
+
+  img {
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+
+    @include upto-lg {
+      max-height: none;
+      width: auto;
+      height: 300px;
+    }
+  }
+
+  .next-slide,
+  .prev-slide {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% - 100px);
+    border-radius: 4px;
+    background-color: rgba($color-gray-550, 0.7);
+    z-index: 9;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    ng-icon {
+      font-size: 38px;
+    }
+
+    @include upto-lg {
+      width: 40px;
+      height: 40px;
+
+      ng-icon {
+        font-size: 32px;
+      }
+    }
+
+    @include upto-md {
+      width: 30px;
+      height: 30px;
+      top: auto;
+      bottom: 20px;
+      transform: none;
+      right: 20px;
+      left: auto;
+
+      ng-icon {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .prev-slide {
+    left: auto;
+    right: calc(100% - 100px);
+
+    @include upto-md {
+      right: 65px;
+    }
+  }
+
+  swiper-slide {
+    background-color: #ccc;
+
+  }
+
+
+
+  .custom-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: rgba(#000, 0.2);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 12px 35px;
+    z-index: 8;
+    width: auto;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+
+    ::ng-deep span {
+      background-color: $color-gray-200;
+      transition: $transition-primary;
+      opacity: 1;
+      height: 7px;
+      width: 7px;
+      margin: 0 6px;
+
+      &.swiper-pagination-bullet-active {
+        background-color: $color-red-250;
+        width: 40px;
+        height: 7px;
+        border-radius: 5px;
+      }
+    }
+
+    @include upto-lg {
+      display: none;
+    }
+  }
+
+
+}

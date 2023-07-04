@@ -1,0 +1,36 @@
+.btn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 8px 24px;
+
+  &-primary {
+    background-color: $color-green-primary;
+    text-transform: uppercase;
+    height: 35px;
+    font-size: 14px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: $font-inter;
+    transition: $transition-primary;
+    box-shadow: 0px 4px 5px 0 rgba($color-green-primary, .4);
+    min-width: 109px;
+
+    &:hover {
+      background-color: darken($color-green-primary, 5%);
+      box-shadow: none;
+    }
+  }
+
+  &-secondary {
+    background-color: $color-gray-600;
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 10px 14px;
+  }
+}

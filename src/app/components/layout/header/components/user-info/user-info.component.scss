@@ -1,0 +1,122 @@
+@import '../../../../../../scss/abstracts/variables';
+@import '../../../../../../scss/abstracts/mixins';
+
+
+.user-area {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  height: 100%;
+
+  @include upto-lg {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  button {
+    @include upto-xxxl {
+      margin-right: 10px;
+      flex-shrink: 0;
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+
+    @include upto-xl {
+      display: none;
+    }
+
+    @include upto-lg {
+      display: inline-block;
+    }
+  }
+
+  .deposit {
+    background-color: $color-blue-850;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 25px;
+    padding: 5px 35px 5px 18px;
+    position: relative;
+    min-width: 87px;
+    cursor: pointer;
+
+    span {
+      color: $color-green-primary;
+      font-size: 12px;
+    }
+
+    ng-icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: $color-gray-500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .user {
+    margin: 0 13px;
+    display: flex;
+    align-items: center;
+    color: $color-gray-350;
+
+    @include upto-xxl {
+      margin-right: 0;
+    }
+
+    @include upto-lg {
+      width: 100%;
+      margin: 25px 18px 0;
+      justify-content: center;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    img {
+      flex-shrink: 0;
+      border-radius: 50%;
+      object-fit: cover;
+      height: 36px;
+      width: 36px;
+      border: 1px solid $color-green-primary;
+      margin-left: 15px;
+    }
+
+    ng-icon {
+      color: $color-green-primary;
+      width: 18px;
+      height: 18px;
+      margin-left: -11px;
+      margin-bottom: -18px;
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 75%;
+        height: 75%;
+        background-color: #fff;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+
+        border-radius: 50%;
+      }
+
+      ::ng-deep svg {
+        width: 18px !important;
+        height: 18px !important;
+        position: relative;
+      }
+    }
+  }
+}

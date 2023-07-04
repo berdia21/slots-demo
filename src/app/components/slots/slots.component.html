@@ -1,0 +1,22 @@
+<section>
+  <div class="container">
+    <div class="slots">
+      <div class="header">
+        <span> {{ "allSlots" | translate }} </span>
+        <app-search (searchEvent)="handleSearch($event)"></app-search>
+      </div>
+      <app-providers
+        (activeProvider)="setActiveProvider($event)"
+      ></app-providers>
+      <div class="flex">
+        <app-games
+          *ngIf="gamesToDisplay"
+          [activeProvider]="activeProvider"
+          [games]="gamesToDisplay"
+          [searchKeyword]="searchKeyword"
+        ></app-games>
+        <div class="sidebar"></div>
+      </div>
+    </div>
+  </div>
+</section>

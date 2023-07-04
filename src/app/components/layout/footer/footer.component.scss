@@ -1,0 +1,51 @@
+@import '../../../../scss/abstracts/variables';
+@import '../../../../scss/abstracts/mixins';
+
+footer {
+  background-color: $color-blue-800;
+  padding: 25px 0 12px;
+}
+
+.payment-methods {
+  opacity: 0.5;
+
+  @include upto-lg {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+      &:first-child {
+        margin: 0 0 20px;
+      }
+    }
+  }
+}
+
+.copyrights {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+
+  @include upto-md {
+    flex-direction: column;
+
+    span {
+      display: block;
+      margin-bottom: 15px;
+    }
+  }
+
+  .adults {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    font-family: $font-inter;
+    font-size: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,106 @@
+// font-import mixin
+
+@mixin font-face($font-family, $folder-name, $font-name, $font-weight: 400) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: local('#{$font-name}'),
+    url('/assets/fonts/#{$folder-name}/#{$font-name}.woff') format('woff');
+    font-style: normal;
+    font-weight: $font-weight;
+    font-display: swap;
+  }
+}
+
+// Media mixins
+$xs: '360px';
+$sm: '575px';
+$md: '768px';
+$lg: '991px';
+$xl: '1199px';
+$xxl: '1399px';
+$xxxl: '1599px';
+
+@mixin xs-up {
+  @media (min-width: #{$xs}) {
+    @content;
+  }
+}
+
+@mixin sm-up {
+  @media (min-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media (min-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin xl-up {
+  @media (min-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin xxl-up {
+  @media (min-width: #{$xxl}) {
+    @content;
+  }
+}
+
+@mixin xxxl-up {
+  @media (min-width: #{$xxxl}) {
+    @content;
+  }
+}
+
+
+@mixin upto-xs {
+  @media (max-width: calc(#{$xs} - 1px)) {
+    @content;
+  }
+}
+
+@mixin upto-sm {
+  @media (max-width: calc(#{$sm} - 1px)) {
+    @content;
+  }
+}
+
+@mixin upto-md {
+  @media (max-width: calc(#{$md} - 1px)) {
+    @content;
+  }
+}
+
+@mixin upto-lg {
+  @media (max-width: calc(#{$lg} - 1px)) {
+    @content;
+  }
+}
+
+@mixin upto-xl {
+  @media (max-width: calc(#{$xl} - 1px)) {
+    @content;
+  }
+}
+
+@mixin upto-xxl {
+  @media (max-width: calc(#{$xxl} - 1px)) {
+    @content;
+  }
+}
+
+@mixin upto-xxxl {
+  @media (max-width: calc(#{$xxxl} - 1px)) {
+    @content;
+  }
+}

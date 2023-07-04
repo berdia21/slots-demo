@@ -1,0 +1,86 @@
+@import '../../../../../scss/abstracts/variables';
+@import '../../../../../scss/abstracts/mixins';
+
+.providers {
+  padding: 20px 25px;
+  border-bottom: 1px solid $color-blue-950;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+
+  @include upto-sm {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
+
+.provider-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 40px;
+  font-size: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 13%;
+  padding-right: 7px;
+  transition: $transition-primary;
+  border-radius: 20px;
+  background-color: transparent;
+
+
+  @include upto-xl {
+    width: 14%;
+    min-width: 140px;
+  }
+
+  @include upto-lg {
+    width: 17%;
+    min-width: 155px;
+  }
+
+  @include upto-sm {
+    min-width: auto;
+    width: auto;
+  }
+
+  div {
+    white-space: nowrap;
+  }
+
+  .image-holder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-gray-600;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: $transition-primary;
+
+    img {
+      max-height: 32px;
+      max-width: 32px;
+      z-index: 1;
+      filter: drop-shadow(0px 0px 2px rgba(#000, .7));
+    }
+  }
+
+  &.active {
+    background-color: $color-red-300;
+
+
+    .image-holder {
+      background-color: transparent;
+    }
+  }
+}
+
+.toggle-btn {
+  @include upto-sm {
+    display: none;
+  }
+}

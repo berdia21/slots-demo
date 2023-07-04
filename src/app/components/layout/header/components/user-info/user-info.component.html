@@ -1,0 +1,19 @@
+<div class="user-area">
+  <button class="btn btn-primary mr-[20px]" title="Deposit">
+    {{ "deposit" | translate }}
+  </button>
+  <div class="deposit" (click)="depositIsVisible = !depositIsVisible">
+    <span> {{ depositIsVisible ? "500₾" : "****" }} </span>
+    <ng-icon
+      [name]="depositIsVisible ? 'matVisibilityOff' : 'matVisibility'"
+    ></ng-icon>
+  </div>
+
+  <div class="user">
+    <span> Elon Musk </span>
+    <div class="flex items-center">
+      <img src="assets/images/user-pic.png" alt="user" />
+      <ng-icon name="matCheckCircle"></ng-icon>
+    </div>
+  </div>
+</div>

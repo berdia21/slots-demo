@@ -1,0 +1,56 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.slots {
+  background-color: $color-blue-700;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 108px;
+
+  @include upto-md {
+    margin-bottom: 50px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 24px;
+  border-bottom: 1px solid $color-blue-950;
+  font-size: 20px;
+
+  &>span {
+    font-weight: 700;
+
+    @include upto-sm {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include upto-sm {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+app-games {
+  flex-grow: 1;
+  width: 50%;
+  border-right: 1px solid $color-blue-950;
+}
+
+app-search {
+  @include upto-sm {
+    width: 100%;
+  }
+}
+
+.sidebar {
+  width: 254px;
+
+  @include upto-xl {
+    display: none;
+  }
+}
