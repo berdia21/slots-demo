@@ -1,0 +1,73 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.scss",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "posts",
+      "urls": [ "https://betlive.free.beeceptor.com/posts", "https://betlive.free.beeceptor.com/providers", "https://betlive.free.beeceptor.com/**" ],
+      "cacheConfig": {
+        "maxSize": 5,
+        "maxAge": "1h",
+        "timeout": "15s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "providers",
+      "urls": ["https://betlive.free.beeceptor.com/providers"],
+      "cacheConfig": {
+        "maxSize": 5,
+        "maxAge": "1h",
+        "timeout": "15s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "games",
+      "urls": ["https://betlive.free.beeceptor.com/game/group/**"],
+      "cacheConfig": {
+        "maxSize": 5,
+        "maxAge": "1h",
+        "timeout": "15s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "images",
+      "urls": ["https://cdn.betlive.com/**" ],
+      "cacheConfig": {
+        "maxSize": 5,
+        "maxAge": "1h",
+        "timeout": "15s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}
