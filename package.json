@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build-dev": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run slots-demo:serve-ssr",
     "serve:ssr": "node dist/slots-demo/server/main.js",
     "build:ssr": "ng build && ng run slots-demo:server",
-    "prerender": "ng run slots-demo:prerender"
+    "prerender": "ng run slots-demo:prerender",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
