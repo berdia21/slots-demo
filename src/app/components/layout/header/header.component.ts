@@ -34,7 +34,7 @@ export class HeaderComponent {
     });
   }
 
-  desktopMode!: boolean;
+  desktopMode: boolean = true;
 
   ngAfterViewInit() {
     this.desktopMode = window?.innerWidth > 990;
