@@ -53,7 +53,7 @@
       "name": "games",
       "urls": ["https://betlive.free.beeceptor.com/game/group/**"],
       "cacheConfig": {
-        "maxSize": 5,
+        "maxSize": 30,
         "maxAge": "1h",
         "timeout": "15s",
         "strategy": "freshness"
@@ -63,7 +63,7 @@
       "name": "images",
       "urls": ["https://cdn.betlive.com/**" ],
       "cacheConfig": {
-        "maxSize": 5,
+        "maxSize": 50,
         "maxAge": "1h",
         "timeout": "15s",
         "strategy": "freshness"

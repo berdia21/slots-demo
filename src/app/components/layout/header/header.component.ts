@@ -1,16 +1,16 @@
-import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Subject } from 'rxjs';
-import { throttleTime } from 'rxjs/operators';
-import { LanguageComponent } from './components/language/language.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { RouterModule } from '@angular/router';
-import { UserInfoComponent } from './components/user-info/user-info.component';
-import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { matClose, matMenu } from '@ng-icons/material-icons/baseline';
+import { Component, HostListener, Inject, PLATFORM_ID } from "@angular/core";
+import { CommonModule, isPlatformBrowser } from "@angular/common";
+import { Subject } from "rxjs";
+import { throttleTime } from "rxjs/operators";
+import { LanguageComponent } from "./components/language/language.component";
+import { NavigationComponent } from "./components/navigation/navigation.component";
+import { RouterModule } from "@angular/router";
+import { UserInfoComponent } from "./components/user-info/user-info.component";
+import { NgIconComponent, provideIcons } from "@ng-icons/core";
+import { matClose, matMenu } from "@ng-icons/material-icons/baseline";
 
 @Component({
-  selector: 'app-header',
+  selector: "app-header",
   standalone: true,
   imports: [
     CommonModule,
@@ -20,8 +20,8 @@ import { matClose, matMenu } from '@ng-icons/material-icons/baseline';
     UserInfoComponent,
     NgIconComponent,
   ],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
   providers: [provideIcons({ matMenu, matClose })],
 })
 export class HeaderComponent {
@@ -34,26 +34,30 @@ export class HeaderComponent {
     });
   }
 
-  desktopMode: boolean = window.innerWidth > 990;
+  desktopMode!: boolean;
 
-  @HostListener('window:resize', ['$event'])
+  ngAfterViewInit() {
+    this.desktopMode = window?.innerWidth > 990;
+  }
+
+  @HostListener("window:resize", ["$event"])
   onResize(event: Event) {
     this.resizeSubject.next(event);
   }
 
   onWindowResize(event: Event) {
-    this.desktopMode = window.innerWidth > 990;
+    this.desktopMode = window?.innerWidth > 990;
   }
 
   toggleNav() {
     this.navIsOpen = !this.navIsOpen;
 
     if (this.navIsOpen) {
-      document.documentElement.classList.add('disable-scroll');
-      document.body.classList.add('disable-scroll');
+      document.documentElement.classList.add("disable-scroll");
+      document.body.classList.add("disable-scroll");
     } else {
-      document.documentElement.classList.remove('disable-scroll');
-      document.body.classList.remove('disable-scroll');
+      document.documentElement.classList.remove("disable-scroll");
+      document.body.classList.remove("disable-scroll");
     }
   }
 }
